@@ -45,9 +45,9 @@ The idea is simple. To enable logging on the MySQL server. Access all possible p
        ]
    ];
    ```
-3. In your source (staging) MySQL instance execute `SET GLOBAL general_log = 'ON';`, to enable the logging of the queries.
+3. In your source (staging) MySQL instance execute `SET GLOBAL log_output = 'table'; SET GLOBAL general_log = 1;`, to enable the logging of the queries.
 4. Visit the pages of your website, that you want to use locally.
-5. In your source (staging) MySQL instance execute `SET GLOBAL general_log = 'OFF';`, to stop the logging.
+5. In your source (staging) MySQL instance execute `SET GLOBAL general_log = 0;`, to stop the logging.
 6. Save into a text plain file the `argument` column from the table `mysql`.`general_log`.
    1. Basically execute the query:
       ```sql
